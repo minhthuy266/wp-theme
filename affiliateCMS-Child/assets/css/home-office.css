@@ -1,0 +1,296 @@
+/**
+ * Home Office Premium Theme - Additional Styles
+ * US Standard Design for Professional Workspace
+ */
+
+/* Product Review Cards */
+.product-review {
+    background: var(--ho-white);
+    border-radius: var(--ho-radius-lg);
+    box-shadow: var(--ho-shadow-md);
+    padding: var(--ho-space-lg);
+    margin-bottom: var(--ho-space-lg);
+}
+
+.product-review__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--ho-space-md);
+}
+
+.product-review__title {
+    font-size: 1.5rem;
+    margin-bottom: var(--ho-space-xs);
+}
+
+.product-review__price {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--ho-success);
+}
+
+.product-review__features {
+    list-style: none;
+    padding: 0;
+    margin: var(--ho-space-md) 0;
+}
+
+.product-review__features li {
+    padding: var(--ho-space-xs) 0;
+    padding-left: var(--ho-space-lg);
+    position: relative;
+}
+
+.product-review__features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--ho-success);
+    font-weight: 700;
+}
+
+/* Comparison Table */
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--ho-white);
+    border-radius: var(--ho-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--ho-shadow-md);
+    margin: var(--ho-space-lg) 0;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: var(--ho-space-md);
+    text-align: left;
+    border-bottom: 1px solid var(--ho-light-gray);
+}
+
+.comparison-table th {
+    background: var(--ho-primary);
+    color: var(--ho-white);
+    font-weight: 600;
+}
+
+.comparison-table tr:hover {
+    background: var(--ho-off-white);
+}
+
+/* Workspace Tips */
+.workspace-tip {
+    background: linear-gradient(135deg, var(--ho-secondary), var(--ho-primary));
+    color: var(--ho-white);
+    padding: var(--ho-space-xl);
+    border-radius: var(--ho-radius-lg);
+    margin: var(--ho-space-lg) 0;
+}
+
+.workspace-tip__icon {
+    font-size: 3rem;
+    margin-bottom: var(--ho-space-md);
+}
+
+.workspace-tip__title {
+    color: var(--ho-white);
+    margin-bottom: var(--ho-space-sm);
+}
+
+/* Newsletter Signup */
+.newsletter-signup {
+    background: var(--ho-off-white);
+    padding: var(--ho-space-2xl);
+    border-radius: var(--ho-radius-xl);
+    text-align: center;
+    margin: var(--ho-space-2xl) 0;
+}
+
+.newsletter-signup__form {
+    display: flex;
+    gap: var(--ho-space-md);
+    max-width: 500px;
+    margin: var(--ho-space-lg) auto 0;
+}
+
+.newsletter-signup__input {
+    flex: 1;
+    padding: var(--ho-space-md);
+    border: 2px solid var(--ho-light-gray);
+    border-radius: var(--ho-radius-md);
+    font-size: 1rem;
+}
+
+.newsletter-signup__input:focus {
+    outline: none;
+    border-color: var(--ho-secondary);
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    display: flex;
+    gap: var(--ho-space-sm);
+    padding: var(--ho-space-md) 0;
+    font-size: 0.875rem;
+    color: var(--ho-medium-gray);
+}
+
+.breadcrumb a {
+    color: var(--ho-secondary);
+}
+
+.breadcrumb__separator {
+    opacity: 0.5;
+}
+
+/* Author Box */
+.author-box {
+    display: flex;
+    gap: var(--ho-space-lg);
+    background: var(--ho-white);
+    padding: var(--ho-space-lg);
+    border-radius: var(--ho-radius-lg);
+    margin: var(--ho-space-xl) 0;
+}
+
+.author-box__avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--ho-radius-full);
+    object-fit: cover;
+}
+
+.author-box__content h4 {
+    margin-bottom: var(--ho-space-xs);
+}
+
+.author-box__bio {
+    color: var(--ho-medium-gray);
+    font-size: 0.95rem;
+}
+
+/* Table of Contents */
+.table-of-contents {
+    background: var(--ho-off-white);
+    padding: var(--ho-space-lg);
+    border-radius: var(--ho-radius-lg);
+    margin: var(--ho-space-lg) 0;
+}
+
+.table-of-contents__title {
+    font-size: 1.25rem;
+    margin-bottom: var(--ho-space-md);
+}
+
+.table-of-contents ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.table-of-contents li {
+    margin-bottom: var(--ho-space-sm);
+}
+
+.table-of-contents a {
+    color: var(--ho-dark-gray);
+    transition: color var(--ho-transition-fast);
+}
+
+.table-of-contents a:hover {
+    color: var(--ho-secondary);
+}
+
+/* Pros & Cons */
+.pros-cons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--ho-space-lg);
+    margin: var(--ho-space-lg) 0;
+}
+
+.pros-cons__list {
+    padding: var(--ho-space-lg);
+    border-radius: var(--ho-radius-lg);
+}
+
+.pros-cons__list--pros {
+    background: rgba(39, 174, 96, 0.1);
+    border: 2px solid var(--ho-success);
+}
+
+.pros-cons__list--cons {
+    background: rgba(231, 76, 60, 0.1);
+    border: 2px solid var(--ho-accent);
+}
+
+.pros-cons__title {
+    font-size: 1.25rem;
+    margin-bottom: var(--ho-space-md);
+    display: flex;
+    align-items: center;
+    gap: var(--ho-space-sm);
+}
+
+.pros-cons__list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pros-cons__list li {
+    padding: var(--ho-space-xs) 0;
+}
+
+/* Call to Action */
+.cta-box {
+    background: linear-gradient(135deg, var(--ho-secondary), var(--ho-primary));
+    color: var(--ho-white);
+    padding: var(--ho-space-2xl);
+    border-radius: var(--ho-radius-xl);
+    text-align: center;
+    margin: var(--ho-space-2xl) 0;
+}
+
+.cta-box__title {
+    color: var(--ho-white);
+    font-size: 2rem;
+    margin-bottom: var(--ho-space-md);
+}
+
+.cta-box__text {
+    font-size: 1.125rem;
+    opacity: 0.95;
+    margin-bottom: var(--ho-space-lg);
+}
+
+.cta-box .btn {
+    background: var(--ho-white);
+    color: var(--ho-secondary);
+}
+
+.cta-box .btn:hover {
+    background: var(--ho-off-white);
+    color: var(--ho-accent);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .newsletter-signup__form {
+        flex-direction: column;
+    }
+    
+    .author-box {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .comparison-table {
+        font-size: 0.875rem;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+        padding: var(--ho-space-sm);
+    }
+}
