@@ -1,0 +1,184 @@
+/* ========================================
+ * CATEGORY PAGE STYLES
+ * Category header - Centered Layout
+ * ======================================== */
+
+/* ----------------------------------------
+ * Category Header - Centered Layout
+ * All elements stacked and centered
+ * ---------------------------------------- */
+.cat-header--centered {
+    padding: var(--space-10) 0 var(--space-8);
+    background:
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(var(--color-primary-rgb), 0.08) 0%, transparent 70%),
+        linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 100%);
+    border-bottom: 1px solid var(--color-border-subtle);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle top accent line */
+.cat-header--centered::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+    border-radius: 0 0 var(--radius-full) var(--radius-full);
+}
+
+/* Icon - uses shared .icon-badge from components/icon-badge.css */
+.cat-header--centered .cat-header__icon {
+    margin-bottom: var(--space-4);
+}
+
+/* Title */
+.cat-header--centered .cat-header__title {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    color: var(--color-text);
+    margin: 0 0 var(--space-2);
+    line-height: var(--leading-tight);
+}
+
+@media (min-width: 768px) {
+    .cat-header--centered .cat-header__title {
+        font-size: var(--text-3xl);
+    }
+}
+
+/* Breadcrumb */
+.cat-header--centered .cat-header__breadcrumb,
+.cat-header--centered .breadcrumb {
+    width: 100%;
+    text-align: center;
+    margin-bottom: var(--space-4);
+}
+
+/* Center breadcrumb list */
+.cat-header--centered .breadcrumb__list {
+    display: inline-flex;
+    justify-content: center;
+}
+
+/* Description */
+.cat-header--centered .cat-header__description {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin: 0 auto var(--space-4);
+    line-height: var(--leading-relaxed);
+    max-width: 600px;
+}
+
+@media (min-width: 768px) {
+    .cat-header--centered .cat-header__description {
+        font-size: var(--text-base);
+    }
+}
+
+/* Meta */
+.cat-header--centered .cat-header__meta {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+}
+
+.cat-header--centered .cat-header__meta-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1-5);
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+}
+
+.cat-header--centered .cat-header__meta-item i {
+    color: var(--color-primary);
+}
+
+/* ----------------------------------------
+ * Child Categories - Centered Grid
+ * Mobile: 2 columns, Desktop: max 3 columns
+ * ---------------------------------------- */
+.cat-header--centered .cat-children {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+    .cat-header--centered .cat-children {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.cat-header--centered .cat-child {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    text-align: left;
+    transition: all var(--duration-200) var(--ease-out);
+}
+
+.cat-header--centered .cat-child:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-md);
+}
+
+.cat-header--centered .cat-child__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-primary-light);
+    border-radius: var(--radius-md);
+    color: var(--color-primary);
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.cat-header--centered .cat-child:hover .cat-child__icon {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.cat-header--centered .cat-child__info {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.cat-header--centered .cat-child__name {
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--color-text);
+    margin: 0 0 var(--space-0-5);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cat-header--centered .cat-child__count {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    white-space: nowrap;
+}
+
+
+/* ========================================
+ * BREADCRUMB
+ * Uses shared .breadcrumb from components/breadcrumb.css
+ * ======================================== */

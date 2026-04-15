@@ -1,0 +1,96 @@
+/*
+ * Social Links Component
+ * Shared social link button styles
+ *
+ * Usage: Add .social-link class to anchor elements
+ * Modifiers: .social-link--sm, .social-link--lg, .social-link--rounded
+ */
+
+/* ========================================
+ * BASE SOCIAL LINK
+ * ======================================== */
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    background-color: var(--color-bg-alt);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-full);
+    text-decoration: none;
+    transition: all var(--duration-200) var(--ease-out);
+}
+
+.social-link:hover {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    background-color: var(--color-primary-light);
+}
+
+/* ========================================
+ * SIZE VARIANTS
+ * ======================================== */
+
+/* Small - 32px */
+.social-link--sm {
+    width: 32px;
+    height: 32px;
+    font-size: var(--text-sm);
+}
+
+/* Large - 40px */
+.social-link--lg {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+}
+
+/* Extra Large - 44px */
+.social-link--xl {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+}
+
+/* ========================================
+ * SHAPE VARIANTS
+ * ======================================== */
+
+/* Rounded square */
+.social-link--rounded {
+    border-radius: var(--radius-md);
+}
+
+/* ========================================
+ * HOVER VARIANTS
+ * ======================================== */
+
+/* Fill hover (solid background) */
+.social-link--fill:hover {
+    color: white;
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+/* Lift hover (with transform) */
+.social-link--lift:hover {
+    transform: translateY(-2px);
+}
+
+/* ========================================
+ * SOCIAL LINKS CONTAINER
+ * ======================================== */
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.social-links--centered {
+    justify-content: center;
+}

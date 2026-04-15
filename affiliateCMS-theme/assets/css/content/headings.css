@@ -1,0 +1,113 @@
+/*
+ * Post Content - Headings
+ * H1-H6 base styles
+ *
+ * Dependencies: _base.css, tokens.css
+ */
+
+/* ========================================
+ * BASE HEADING STYLES
+ * ======================================== */
+
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+    font-family: var(--font-sans);
+    font-weight: var(--font-bold);
+    line-height: var(--leading-tight);
+    color: var(--content-text);
+    margin-top: var(--content-element-spacing);
+    margin-bottom: var(--space-4);
+}
+
+/* Remove top margin if first child */
+.post-content > h1:first-child,
+.post-content > h2:first-child,
+.post-content > h3:first-child,
+.post-content > h4:first-child,
+.post-content > h5:first-child,
+.post-content > h6:first-child {
+    margin-top: 0;
+}
+
+/* Heading sizes */
+.post-content h1 {
+    font-size: var(--text-3xl);
+    margin-top: var(--content-section-spacing);
+}
+
+.post-content h2 {
+    font-size: var(--text-2xl);
+    border-left: 0.425rem solid var(--color-primary);
+    padding-left: var(--space-2);
+    margin-top: var(--content-section-spacing);
+}
+
+.post-content h3 {
+    font-size: var(--text-xl);
+}
+
+.post-content h4 {
+    font-size: var(--text-lg);
+}
+
+.post-content h5 {
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+}
+
+.post-content h6 {
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    color: var(--content-text-secondary);
+}
+
+/* Responsive sizes */
+@media (min-width: 768px) {
+    .post-content h1 {
+        font-size: var(--text-4xl);
+    }
+
+    .post-content h2 {
+        font-size: var(--text-3xl);
+    }
+
+    .post-content h3 {
+        font-size: var(--text-2xl);
+    }
+
+    .post-content h4 {
+        font-size: var(--text-xl);
+    }
+}
+
+/* Heading anchor links */
+.post-content h1 a.anchor,
+.post-content h2 a.anchor,
+.post-content h3 a.anchor,
+.post-content h4 a.anchor {
+    opacity: 0;
+    margin-left: var(--space-2);
+    text-decoration: none;
+    color: var(--content-text-muted);
+    transition: opacity var(--duration-200) var(--ease-out);
+}
+
+.post-content h1:hover a.anchor,
+.post-content h2:hover a.anchor,
+.post-content h3:hover a.anchor,
+.post-content h4:hover a.anchor {
+    opacity: 1;
+}
+
+.post-content h1 a.anchor:hover,
+.post-content h2 a.anchor:hover,
+.post-content h3 a.anchor:hover,
+.post-content h4 a.anchor:hover {
+    color: var(--color-primary);
+}

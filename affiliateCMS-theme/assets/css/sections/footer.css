@@ -1,0 +1,171 @@
+/*
+ * Footer Section - AffiliateCMS
+ * Single Column Centered Layout
+ */
+
+/* ========================================
+ * FOOTER BASE
+ * ======================================== */
+
+.site-footer {
+    background-color: var(--color-surface);
+    border-top: 1px solid var(--color-border-subtle);
+    padding: var(--space-10) 0 var(--space-6);
+}
+
+/* ========================================
+ * MAIN CONTENT - SINGLE COLUMN
+ * ======================================== */
+
+.footer__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-6);
+    padding-bottom: var(--space-6);
+    border-bottom: 1px solid var(--color-border-subtle);
+}
+
+/* ========================================
+ * BRAND
+ * ======================================== */
+
+.footer__brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-3);
+}
+
+.footer__logo {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    text-decoration: none;
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    color: var(--color-text);
+}
+
+.footer__logo-icon {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+}
+
+.footer__logo-text {
+    color: var(--color-text);
+}
+
+.footer__logo-img {
+    height: 32px;
+    width: auto;
+}
+
+.footer__description {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: var(--leading-relaxed);
+    margin: 0;
+    max-width: 480px;
+}
+
+/* ========================================
+ * INFO
+ * ======================================== */
+
+.footer__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-4);
+}
+
+.footer__disclosure {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    line-height: var(--leading-relaxed);
+    margin: 0;
+    max-width: 520px;
+}
+
+/* ========================================
+ * SOCIAL ICONS
+ * ======================================== */
+
+.footer__social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+}
+
+.footer__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: var(--color-bg-alt);
+    border: none;
+    border-radius: var(--radius-md);
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: all var(--duration-200) var(--ease-out);
+}
+
+.footer__social-link:hover {
+    color: var(--color-primary);
+    background-color: var(--color-surface-raised);
+    transform: translateY(-2px);
+}
+
+.footer__social-link i {
+    font-size: 16px;
+}
+
+/* ========================================
+ * BOTTOM - LINKS + COPYRIGHT
+ * ======================================== */
+
+.footer__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
+    padding-top: var(--space-5);
+    text-align: center;
+}
+
+.footer__links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-1) var(--space-4);
+}
+
+.footer__link {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color var(--duration-150) var(--ease-out);
+}
+
+.footer__link:hover {
+    color: var(--color-primary);
+}
+
+.footer__copyright {
+    font-size: var(--text-xs);
+    color: var(--color-text-subtle);
+    margin: 0;
+}

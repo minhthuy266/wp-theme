@@ -1,0 +1,100 @@
+/*
+ * Icon Badge Component
+ * Gradient icon containers used across pages
+ *
+ * Usage: Add .icon-badge class to element containing an icon
+ * Modifiers: .icon-badge--sm, .icon-badge--lg, .icon-badge--xl
+ */
+
+/* ========================================
+ * BASE ICON BADGE
+ * ======================================== */
+
+.icon-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
+    border-radius: var(--radius-lg);
+    color: white;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+/* ========================================
+ * SIZE VARIANTS
+ * ======================================== */
+
+/* Extra Small - 32px */
+.icon-badge--xs {
+    width: 32px;
+    height: 32px;
+    font-size: var(--text-sm);
+    border-radius: var(--radius-md);
+}
+
+/* Small - 36px */
+.icon-badge--sm {
+    width: 36px;
+    height: 36px;
+    font-size: var(--text-base);
+    border-radius: var(--radius-md);
+}
+
+/* Medium - 48px (default) */
+/* .icon-badge--md is same as base */
+
+/* Large - 56px */
+.icon-badge--lg {
+    width: 56px;
+    height: 56px;
+    font-size: 24px;
+}
+
+/* Extra Large - 64px */
+.icon-badge--xl {
+    width: 64px;
+    height: 64px;
+    font-size: 28px;
+}
+
+/* XXL - 72px */
+.icon-badge--2xl {
+    width: 72px;
+    height: 72px;
+    font-size: 32px;
+    border-radius: var(--radius-xl);
+}
+
+/* ========================================
+ * STYLE VARIANTS
+ * ======================================== */
+
+/* Accent gradient */
+.icon-badge--accent {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+}
+
+/* With shadow */
+.icon-badge--shadow {
+    box-shadow: 0 8px 24px rgba(var(--color-primary-rgb), 0.25);
+}
+
+/* Circle shape */
+.icon-badge--circle {
+    border-radius: var(--radius-full);
+}
+
+/* ========================================
+ * RESPONSIVE
+ * ======================================== */
+
+@media (min-width: 768px) {
+    .icon-badge--lg {
+        width: 64px;
+        height: 64px;
+        font-size: 28px;
+    }
+}

@@ -1,0 +1,59 @@
+/*
+ * Post Content - Blockquotes
+ * Simple quote style with left border accent
+ *
+ * Dependencies: _base.css, tokens.css
+ */
+
+/* ========================================
+ * BASE BLOCKQUOTE STYLES
+ * ======================================== */
+
+.post-content blockquote,
+.post-content__quote--simple {
+    margin: var(--content-element-spacing) 0;
+    padding: var(--space-4) var(--space-6);
+    border-left: 4px solid var(--color-primary);
+    background-color: var(--content-bg-subtle);
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+}
+
+.post-content blockquote p,
+.post-content__quote--simple p {
+    font-size: var(--text-lg);
+    font-style: italic;
+    color: var(--content-text-secondary);
+    margin-bottom: var(--space-3);
+}
+
+.post-content blockquote p:last-child,
+.post-content__quote--simple p:last-child {
+    margin-bottom: 0;
+}
+
+.post-content blockquote cite,
+.post-content blockquote footer,
+.post-content__quote--simple cite,
+.post-content__quote--simple footer {
+    display: block;
+    font-size: var(--text-sm);
+    font-style: normal;
+    color: var(--content-text-muted);
+    margin-top: var(--space-3);
+}
+
+.post-content blockquote cite::before,
+.post-content blockquote footer::before,
+.post-content__quote--simple cite::before,
+.post-content__quote--simple footer::before {
+    content: '— ';
+}
+
+/* ========================================
+ * DARK MODE
+ * ======================================== */
+
+[data-theme="dark"] .post-content blockquote,
+[data-theme="dark"] .post-content__quote--simple {
+    background-color: var(--color-bg-alt);
+}

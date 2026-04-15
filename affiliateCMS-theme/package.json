@@ -1,0 +1,25 @@
+{
+  "name": "affiliatecms-theme",
+  "version": "4.0.1",
+  "description": "AffiliateCMS WordPress Theme",
+  "scripts": {
+    "build": "gulp build",
+    "build:css": "gulp css",
+    "build:js": "gulp js",
+    "watch": "gulp watch",
+    "clean": "gulp clean"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.17",
+    "cssnano": "^6.0.3",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-postcss": "^10.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-terser": "^2.1.0",
+    "postcss": "^8.4.35"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

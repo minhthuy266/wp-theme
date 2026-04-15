@@ -1,0 +1,130 @@
+/*
+ * Post Content - Figures & Images
+ * Images, figures, and captions
+ *
+ * Dependencies: _base.css, tokens.css
+ */
+
+/* ========================================
+ * BASE IMAGE STYLES
+ * ======================================== */
+
+.post-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radius-sm);
+}
+
+.post-content figure {
+    margin: var(--content-element-spacing) 0;
+}
+
+.post-content figcaption {
+    margin-top: var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--content-text-muted);
+    text-align: center;
+    line-height: var(--leading-relaxed);
+}
+
+/* Image alignment */
+.post-content .aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.post-content .alignleft {
+    float: left;
+    margin-right: var(--space-6);
+    margin-bottom: var(--space-4);
+    max-width: 50%;
+}
+
+.post-content .alignright {
+    float: right;
+    margin-left: var(--space-6);
+    margin-bottom: var(--space-4);
+    max-width: 50%;
+}
+
+@media (max-width: 639px) {
+    .post-content .alignleft,
+    .post-content .alignright {
+        float: none;
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 100%;
+    }
+}
+
+/* Wide image - breaks out of content width */
+.post-content .alignwide {
+    margin-left: calc(-1 * var(--space-8));
+    margin-right: calc(-1 * var(--space-8));
+    max-width: calc(100% + var(--space-16));
+    width: calc(100% + var(--space-16));
+}
+
+/* Full width image */
+.post-content .alignfull {
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    max-width: 100vw;
+    width: 100vw;
+    border-radius: 0;
+}
+
+/* Prevent overflow on mobile */
+@media (max-width: 767px) {
+    .post-content .alignwide,
+    .post-content .alignfull {
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 100%;
+        width: 100%;
+        border-radius: var(--radius-sm);
+    }
+}
+
+/* ========================================
+ * WORDPRESS CAPTION (Classic Editor)
+ * ======================================== */
+
+figure.wp-caption {
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
+figure.wp-caption img {
+    width: 100%;
+    height: auto;
+}
+
+/* ========================================
+ * FIGURE WITH CAPTION
+ * ======================================== */
+
+.post-content__figure {
+    margin: var(--content-element-spacing) 0;
+}
+
+.post-content__figure img {
+    width: 100%;
+    border-radius: var(--radius-lg);
+}
+
+.post-content__figure-caption {
+    margin-top: var(--space-3);
+    padding: 0 var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--content-text-muted);
+    text-align: center;
+}
+
+/* With icon caption */
+.post-content__figure-caption i {
+    margin-right: var(--space-1);
+    color: var(--color-primary);
+}

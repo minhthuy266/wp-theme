@@ -1,0 +1,47 @@
+/*
+ * Post Content - Embeds
+ * Responsive video embeds (YouTube, iframes)
+ *
+ * Dependencies: _base.css, tokens.css
+ */
+
+/* ========================================
+ * BASE RESPONSIVE EMBED
+ * ======================================== */
+
+.post-content iframe,
+.post-content video {
+    max-width: 100%;
+    border-radius: var(--radius-lg);
+}
+
+/* Responsive wrapper - 16:9 aspect ratio */
+.post-content__embed {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 */
+    margin: var(--content-element-spacing) 0;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    background-color: #000;
+}
+
+.post-content__embed iframe,
+.post-content__embed video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 0;
+}
+
+/* ========================================
+ * RESPONSIVE STYLE
+ * With shadow
+ * ======================================== */
+
+.post-content__embed--responsive {
+    box-shadow: var(--shadow-lg);
+}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250" viewBox="0 0 400 250">
+  <rect fill="#e5e7eb" width="400" height="250"/>
+  <g fill="#9ca3af">
+    <path d="M160 90h80v70h-80z"/>
+    <circle cx="175" cy="105" r="10"/>
+    <polygon points="165,150 190,120 210,140 225,125 250,150"/>
+  </g>
+  <text x="200" y="200" text-anchor="middle" fill="#6b7280" font-family="system-ui" font-size="14">No Image</text>
+</svg>

@@ -1,0 +1,169 @@
+/* ========================================
+ * LOAD MORE COMPONENT
+ * Button for loading more posts via REST API
+ * ======================================== */
+
+.load-more {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
+    margin-top: var(--space-8);
+}
+
+/* Button */
+.load-more__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    min-width: 180px;
+    padding: var(--space-3) var(--space-6);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--color-primary);
+    background-color: var(--color-primary-light);
+    border: 1px solid transparent;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all var(--duration-200) var(--ease-out);
+}
+
+.load-more__btn:hover:not(:disabled) {
+    background-color: var(--color-primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.load-more__btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.load-more__btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.load-more__btn i {
+    font-size: 18px;
+    transition: transform var(--duration-200) var(--ease-out);
+}
+
+.load-more__btn:hover:not(:disabled) .load-more__icon {
+    transform: translateY(2px);
+}
+
+/* ========================================
+ * STATE MANAGEMENT
+ * Default: show text + icon
+ * Loading: show loading + spinner
+ * Complete: show complete + check
+ * ======================================== */
+
+/* Default State - Hide loading/complete elements */
+.load-more__loading,
+.load-more__complete,
+.load-more__spinner,
+.load-more__check {
+    display: none !important;
+}
+
+/* Loading State */
+.load-more__btn.is-loading .load-more__text,
+.load-more__btn.is-loading .load-more__icon {
+    display: none !important;
+}
+
+.load-more__btn.is-loading .load-more__loading,
+.load-more__btn.is-loading .load-more__spinner {
+    display: inline !important;
+}
+
+.load-more__btn.is-loading .load-more__spinner {
+    animation: spin 1s linear infinite;
+}
+
+/* Complete State */
+.load-more.is-complete .load-more__text,
+.load-more.is-complete .load-more__icon {
+    display: none !important;
+}
+
+.load-more.is-complete .load-more__complete,
+.load-more.is-complete .load-more__check {
+    display: inline !important;
+}
+
+.load-more.is-complete .load-more__btn {
+    background-color: var(--color-success-light, rgba(16, 185, 129, 0.1));
+    color: var(--color-success, #10b981);
+    cursor: default;
+}
+
+.load-more.is-complete .load-more__btn:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.load-more.is-complete .load-more__progress {
+    display: none;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Progress Counter */
+.load-more__progress {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+}
+
+.load-more__count {
+    font-weight: var(--font-semibold);
+    color: var(--color-text-secondary);
+}
+
+.load-more__total {
+    font-weight: var(--font-medium);
+}
+
+/* New Post Animation */
+.post-card--new {
+    animation: fadeInUp 0.4s var(--ease-out) forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Dark Theme */
+[data-theme="dark"] .load-more__btn {
+    background-color: rgba(20, 184, 166, 0.15);
+}
+
+[data-theme="dark"] .load-more__btn:hover:not(:disabled) {
+    background-color: var(--color-primary);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .load-more {
+        margin-top: var(--space-6);
+    }
+
+    .load-more__btn {
+        width: 100%;
+        max-width: 280px;
+    }
+}

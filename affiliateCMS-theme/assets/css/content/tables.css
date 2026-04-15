@@ -1,0 +1,223 @@
+/*
+ * Post Content - Tables
+ * Base table + Striped with hover + Specs table
+ *
+ * Dependencies: _base.css, tokens.css
+ */
+
+/* ========================================
+ * BASE TABLE STYLES
+ * ======================================== */
+
+.post-content table {
+    width: 100%;
+    margin: var(--content-element-spacing) 0;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+}
+
+.post-content table th,
+.post-content table td {
+    padding: var(--space-3) var(--space-4);
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid var(--content-border);
+}
+
+.post-content table th {
+    font-weight: var(--font-semibold);
+    color: var(--content-text);
+    background-color: var(--color-bg-alt);
+}
+
+.post-content table td {
+    color: var(--content-text-secondary);
+}
+
+/* Responsive wrapper - horizontal scroll */
+.post-content__table-wrapper {
+    margin: var(--content-element-spacing) 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.post-content__table-wrapper table {
+    margin: 0;
+    min-width: 600px;
+}
+
+/* ========================================
+ * STRIPED WITH HOVER
+ * ======================================== */
+
+.post-content__table--striped {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--content-border);
+}
+
+.post-content__table--striped th,
+.post-content__table--striped td {
+    border-bottom: none;
+}
+
+.post-content__table--striped thead {
+    background-color: var(--color-primary);
+}
+
+.post-content__table--striped th {
+    color: white;
+    background-color: transparent;
+}
+
+.post-content__table--striped tbody tr:nth-child(even) {
+    background-color: var(--color-bg-alt);
+}
+
+.post-content__table--striped tbody tr:nth-child(odd) {
+    background-color: var(--color-surface);
+}
+
+/* Hover effect */
+.post-content__table--striped tbody tr {
+    transition: background-color var(--duration-200) var(--ease-out);
+}
+
+.post-content__table--striped tbody tr:hover {
+    background-color: var(--color-primary-light);
+}
+
+/* ========================================
+ * SPECS TABLE
+ * For product specifications
+ * ======================================== */
+
+.post-content__table--specs {
+    margin: var(--content-element-spacing) 0;
+}
+
+.post-content__table--specs th {
+    width: 35%;
+    background-color: var(--color-bg-alt);
+    font-weight: var(--font-medium);
+    color: var(--content-text-muted);
+    text-align: right;
+    padding-right: var(--space-5);
+}
+
+.post-content__table--specs td {
+    color: var(--content-text);
+    font-weight: var(--font-medium);
+}
+
+/* Specs with icons */
+.post-content__table--specs th i {
+    margin-right: var(--space-2);
+    color: var(--color-primary);
+}
+
+/* ========================================
+ * GUTENBERG BLOCK TABLE (wp:table)
+ * Auto-apply striped style to all AI/Gutenberg tables
+ * ======================================== */
+
+.post-content .wp-block-table {
+    margin: var(--content-element-spacing) 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.post-content .wp-block-table table {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--content-border);
+}
+
+.post-content .wp-block-table th,
+.post-content .wp-block-table td {
+    border-bottom: none;
+}
+
+.post-content .wp-block-table thead {
+    background-color: var(--color-primary);
+}
+
+.post-content .wp-block-table th {
+    color: white;
+    background-color: transparent;
+}
+
+.post-content .wp-block-table tbody tr:nth-child(even) {
+    background-color: var(--color-bg-alt);
+}
+
+.post-content .wp-block-table tbody tr:nth-child(odd) {
+    background-color: var(--color-surface);
+}
+
+.post-content .wp-block-table tbody tr {
+    transition: background-color var(--duration-200) var(--ease-out);
+}
+
+.post-content .wp-block-table tbody tr:hover {
+    background-color: var(--color-primary-light);
+}
+
+/* ========================================
+ * TABLE UTILITIES
+ * ======================================== */
+
+/* No wrap */
+.post-content table .nowrap {
+    white-space: nowrap;
+}
+
+/* Text alignment */
+.post-content table .text-center {
+    text-align: center;
+}
+
+.post-content table .text-right {
+    text-align: right;
+}
+
+/* ========================================
+ * DARK MODE
+ * ======================================== */
+
+[data-theme="dark"] .post-content table th {
+    background-color: var(--color-bg-alt);
+}
+
+[data-theme="dark"] .post-content__table--striped thead {
+    background-color: var(--color-primary-hover);
+}
+
+[data-theme="dark"] .post-content__table--striped tbody tr:nth-child(even) {
+    background-color: var(--color-bg-alt);
+}
+
+[data-theme="dark"] .post-content__table--striped tbody tr:nth-child(odd) {
+    background-color: var(--color-surface);
+}
+
+[data-theme="dark"] .post-content__table--striped tbody tr:hover {
+    background-color: rgba(20, 184, 166, 0.15);
+}
+
+/* Gutenberg block table dark mode */
+[data-theme="dark"] .post-content .wp-block-table thead {
+    background-color: var(--color-primary-hover);
+}
+
+[data-theme="dark"] .post-content .wp-block-table tbody tr:nth-child(even) {
+    background-color: var(--color-bg-alt);
+}
+
+[data-theme="dark"] .post-content .wp-block-table tbody tr:nth-child(odd) {
+    background-color: var(--color-surface);
+}
+
+[data-theme="dark"] .post-content .wp-block-table tbody tr:hover {
+    background-color: rgba(20, 184, 166, 0.15);
+}

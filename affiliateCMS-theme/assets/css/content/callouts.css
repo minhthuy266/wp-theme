@@ -1,0 +1,171 @@
+/*
+ * Post Content - Callouts
+ * Alert boxes, tips, warnings, notes
+ *
+ * Dependencies: _base.css, tokens.css
+ *
+ * Types: info, tip, warning, disclosure
+ */
+
+/* ========================================
+ * BASE CALLOUT STYLES
+ * ======================================== */
+
+.post-content__callout {
+    margin: var(--content-element-spacing) 0;
+    padding: var(--space-4) var(--space-5);
+    border-radius: var(--radius-lg);
+    display: flex;
+    gap: var(--space-4);
+    align-items: flex-start;
+}
+
+.post-content__callout-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    font-size: var(--text-lg);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.post-content__callout-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.post-content__callout-title {
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--space-1);
+}
+
+.post-content__callout p {
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-2);
+    line-height: var(--leading-relaxed);
+}
+
+.post-content__callout p:last-child {
+    margin-bottom: 0;
+}
+
+.post-content__callout a {
+    font-weight: var(--font-medium);
+    text-decoration: underline;
+}
+
+/* ========================================
+ * INFO CALLOUT
+ * ======================================== */
+
+.post-content__callout--info {
+    background-color: var(--color-info-light);
+    border-left: 4px solid var(--color-info);
+}
+
+.post-content__callout--info .post-content__callout-icon {
+    color: var(--color-info);
+}
+
+.post-content__callout--info .post-content__callout-title {
+    color: var(--color-info);
+}
+
+.post-content__callout--info a {
+    color: var(--color-info);
+}
+
+/* ========================================
+ * TIP CALLOUT
+ * ======================================== */
+
+.post-content__callout--tip {
+    background-color: var(--color-success-light);
+    border-left: 4px solid var(--color-success);
+}
+
+.post-content__callout--tip .post-content__callout-icon {
+    color: var(--color-success);
+}
+
+.post-content__callout--tip .post-content__callout-title {
+    color: var(--color-success);
+}
+
+.post-content__callout--tip a {
+    color: var(--color-success);
+}
+
+/* ========================================
+ * WARNING CALLOUT
+ * ======================================== */
+
+.post-content__callout--warning {
+    background-color: var(--color-warning-light);
+    border-left: 4px solid var(--color-warning);
+}
+
+.post-content__callout--warning .post-content__callout-icon {
+    color: var(--color-warning);
+}
+
+.post-content__callout--warning .post-content__callout-title {
+    color: #92400E;
+}
+
+.post-content__callout--warning a {
+    color: #92400E;
+}
+
+/* ========================================
+ * AFFILIATE DISCLOSURE
+ * ======================================== */
+
+.post-content__callout--disclosure {
+    background-color: var(--color-bg-alt);
+    border: 1px solid var(--content-border);
+    border-left: 4px solid var(--color-primary);
+    border-radius: var(--radius-lg);
+}
+
+.post-content__callout--disclosure .post-content__callout-icon {
+    color: var(--color-primary);
+}
+
+.post-content__callout--disclosure .post-content__callout-title {
+    color: var(--content-text);
+}
+
+.post-content__callout--disclosure p {
+    color: var(--content-text-muted);
+    font-size: var(--text-xs);
+}
+
+/* ========================================
+ * DARK MODE
+ * ======================================== */
+
+[data-theme="dark"] .post-content__callout--info {
+    background-color: rgba(59, 130, 246, 0.15);
+}
+
+[data-theme="dark"] .post-content__callout--tip {
+    background-color: rgba(16, 185, 129, 0.15);
+}
+
+[data-theme="dark"] .post-content__callout--warning {
+    background-color: rgba(245, 158, 11, 0.15);
+}
+
+[data-theme="dark"] .post-content__callout--warning .post-content__callout-title,
+[data-theme="dark"] .post-content__callout--warning a {
+    color: #FBBF24;
+}
+
+[data-theme="dark"] .post-content__callout--disclosure {
+    background-color: var(--color-bg-alt);
+    border-color: var(--color-border);
+}

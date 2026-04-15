@@ -1,0 +1,544 @@
+/*
+ * Header Component - AffiliateCMS
+ * Logo | Search | Actions
+ */
+
+/* ========================================
+ * SITE HEADER
+ * ======================================== */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border-subtle);
+    transition: box-shadow var(--duration-200) var(--ease-out);
+    /* Prevent repaints during scroll */
+    will-change: box-shadow;
+    contain: layout style;
+}
+
+.site-header.is-scrolled {
+    box-shadow: var(--shadow-md);
+}
+
+/* Compact header when scrolled */
+.site-header.is-scrolled .header__inner {
+    height: 52px;
+}
+
+@media (min-width: 768px) {
+    .site-header.is-scrolled .header__inner {
+        height: 56px;
+    }
+}
+
+/* Smaller logo when scrolled */
+.site-header.is-scrolled .site-logo__icon {
+    width: 32px;
+    height: 32px;
+}
+
+.site-header.is-scrolled .site-logo__text {
+    font-size: var(--text-lg);
+}
+
+.site-header.is-scrolled .header__logo img,
+.site-header.is-scrolled .header__logo .custom-logo,
+.site-header.is-scrolled .site-logo__image {
+    height: 28px !important;
+    max-height: 28px !important;
+}
+
+@media (min-width: 768px) {
+    .site-header.is-scrolled .header__logo img,
+    .site-header.is-scrolled .header__logo .custom-logo,
+    .site-header.is-scrolled .site-logo__image {
+        height: 30px !important;
+        max-height: 30px !important;
+    }
+}
+
+/* Smaller action buttons when scrolled */
+.site-header.is-scrolled .header__action-btn {
+    width: 36px;
+    height: 36px;
+}
+
+.site-header.is-scrolled .header__action-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Smaller CTA button when scrolled */
+.site-header.is-scrolled .header__cta {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-xs);
+}
+
+.site-header.is-scrolled .header__cta svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* Smooth transitions for scroll effects - use specific properties to avoid layout thrashing */
+.header__inner {
+    transition: height var(--duration-200) var(--ease-out);
+}
+
+.site-logo__icon,
+.site-logo__image,
+.header__logo img {
+    transition: width var(--duration-200) var(--ease-out), height var(--duration-200) var(--ease-out);
+}
+
+.site-logo__text {
+    transition: font-size var(--duration-200) var(--ease-out);
+}
+
+.header__action-btn,
+.header__cta {
+    transition: width var(--duration-200) var(--ease-out), height var(--duration-200) var(--ease-out), padding var(--duration-200) var(--ease-out);
+}
+
+.header__inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    height: var(--header-height-mobile);
+}
+
+@media (min-width: 768px) {
+    .header__inner {
+        height: var(--header-height);
+        gap: var(--space-6);
+    }
+}
+
+/* ========================================
+ * LOGO
+ * ======================================== */
+
+.header__logo {
+    flex-shrink: 0;
+    max-width: 220px;
+    overflow: hidden;
+}
+
+.site-logo-wrap {
+    margin: 0;
+    padding: 0;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+
+.site-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    text-decoration: none;
+}
+
+.site-logo__icon {
+    flex-shrink: 0;
+}
+
+.site-logo__text {
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--color-text);
+    letter-spacing: var(--tracking-tight);
+}
+
+.header__logo img,
+.header__logo .custom-logo,
+.site-logo__image {
+    display: block;
+    height: 32px !important;
+    width: auto !important;
+    max-width: 180px !important;
+    max-height: 32px !important;
+    object-fit: contain;
+}
+
+@media (min-width: 768px) {
+    .header__logo img,
+    .header__logo .custom-logo,
+    .site-logo__image {
+        height: 36px !important;
+        max-height: 36px !important;
+        max-width: 220px !important;
+    }
+}
+
+
+/* ========================================
+ * MOBILE ICONS
+ * ======================================== */
+
+.header__mobile-icons {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+@media (min-width: 1024px) {
+    .header__mobile-icons {
+        display: none;
+    }
+}
+
+.header__icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: var(--color-text-muted);
+    background-color: transparent;
+    border-radius: var(--radius-lg);
+    transition: all var(--duration-150) var(--ease-out);
+}
+
+.header__icon-btn:hover {
+    color: var(--color-text);
+    background-color: var(--color-surface-hover);
+}
+
+.header__icon-btn svg,
+.header__icon-btn i {
+    width: 22px;
+    height: 22px;
+    font-size: 22px;
+}
+
+/* Mobile Menu Toggle States */
+.mobile-menu-toggle .icon-close {
+    display: none;
+}
+
+.mobile-menu-toggle[aria-expanded="true"] .icon-menu {
+    display: none;
+}
+
+.mobile-menu-toggle[aria-expanded="true"] .icon-close {
+    display: block;
+}
+
+/* ========================================
+ * HEADER NAVIGATION (Desktop Inline)
+ * ======================================== */
+
+.header__nav {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .header__nav {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        margin: 0 var(--space-4);
+        min-width: 0; /* Allow flex shrink */
+    }
+}
+
+.header__menu {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+.header__menu > .menu-item {
+    position: relative;
+}
+
+.header__menu > .menu-item > a {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--color-text-muted);
+    text-decoration: none;
+    white-space: nowrap;
+    border-radius: var(--radius-md);
+    transition: all var(--duration-150) var(--ease-out);
+}
+
+.header__menu > .menu-item > a:hover,
+.header__menu > .menu-item.current-menu-item > a {
+    color: var(--color-text);
+    background-color: var(--color-surface-hover);
+}
+
+/* Dropdown Arrow for items with children */
+.header__menu > .menu-item-has-children > a::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid currentColor;
+    opacity: 0.5;
+    transition: transform var(--duration-150) var(--ease-out);
+}
+
+.header__menu > .menu-item-has-children:hover > a::after {
+    transform: rotate(180deg);
+}
+
+/* Simple Dropdown Submenu */
+.header__menu .sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    padding: var(--space-2);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: all var(--duration-200) var(--ease-out);
+    z-index: var(--z-dropdown);
+}
+
+.header__menu > .menu-item-has-children:hover > .sub-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.header__menu .sub-menu li a {
+    display: block;
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    transition: all var(--duration-150) var(--ease-out);
+}
+
+.header__menu .sub-menu li a:hover {
+    color: var(--color-text);
+    background-color: var(--color-surface-hover);
+}
+
+/* ========================================
+ * PRIORITY NAVIGATION (More Menu)
+ * ======================================== */
+
+/* More menu trigger - hidden by default, shown via JS when overflow */
+.header__menu > .menu-item--more {
+    display: none;
+}
+
+.header__menu > .menu-item--more.is-visible {
+    display: block;
+}
+
+.header__menu > .menu-item--more > button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-1);
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--color-text-muted);
+    background: none;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--duration-150) var(--ease-out);
+}
+
+.header__menu > .menu-item--more > button:hover,
+.header__menu > .menu-item--more.is-open > button {
+    color: var(--color-text);
+    background-color: var(--color-surface-hover);
+}
+
+.header__menu > .menu-item--more > button i {
+    font-size: 18px;
+}
+
+/* More dropdown */
+.header__menu > .menu-item--more .more-menu__dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 180px;
+    padding: var(--space-2);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    list-style: none;
+    margin: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: all var(--duration-200) var(--ease-out);
+    z-index: var(--z-dropdown);
+}
+
+.header__menu > .menu-item--more:hover .more-menu__dropdown,
+.header__menu > .menu-item--more.is-open .more-menu__dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.header__menu > .menu-item--more .more-menu__dropdown li a {
+    display: block;
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    white-space: nowrap;
+    transition: all var(--duration-150) var(--ease-out);
+}
+
+.header__menu > .menu-item--more .more-menu__dropdown li a:hover {
+    color: var(--color-text);
+    background-color: var(--color-surface-hover);
+}
+
+/* Hidden items (moved to More menu) */
+.header__menu > .menu-item.is-hidden {
+    display: none !important;
+}
+
+/* CSS-only overflow protection (fallback before JS runs) */
+@media (min-width: 1024px) {
+    /* Nav container clips horizontal overflow by default */
+    .header__nav {
+        position: relative;
+        overflow: hidden; /* Clip menu items that overflow */
+    }
+
+    /* Fade gradient to indicate more content */
+    .header__nav::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 60px;
+        background: linear-gradient(to right, transparent, var(--color-surface));
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    /* When JS has processed - allow dropdown overflow */
+    .header__nav.js-priority-nav-ready {
+        overflow: visible;
+    }
+
+    .header__nav.js-priority-nav-ready::after {
+        display: none; /* Hide gradient */
+    }
+
+    .header__menu.js-priority-nav-ready {
+        overflow: visible;
+    }
+}
+
+/* ========================================
+ * HEADER ACTIONS (Desktop)
+ * ======================================== */
+
+.header__actions {
+    display: none;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+@media (min-width: 1024px) {
+    .header__actions {
+        display: flex;
+        flex-shrink: 0; /* Never shrink - always visible */
+    }
+}
+
+.header__action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: var(--color-text-muted);
+    background-color: transparent;
+    border-radius: var(--radius-lg);
+    transition: all var(--duration-150) var(--ease-out);
+}
+
+.header__action-btn:hover {
+    color: var(--color-text);
+    background-color: var(--color-surface-hover);
+}
+
+.header__action-btn svg,
+.header__action-btn i {
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+}
+
+.header__cta {
+    flex-shrink: 0;
+}
+
+/* ========================================
+ * THEME TOGGLE
+ * ======================================== */
+
+.theme-toggle {
+    position: relative;
+}
+
+.theme-toggle__icon {
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    transition: transform var(--duration-300) var(--ease-out),
+                opacity var(--duration-200) var(--ease-out);
+}
+
+/* Light mode: Show moon, hide sun */
+.theme-toggle__icon--sun {
+    position: absolute;
+    opacity: 0;
+    transform: rotate(45deg) scale(0.5);
+}
+
+.theme-toggle__icon--moon {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+}
+
+/* Dark mode: Show sun, hide moon */
+[data-theme="dark"] .theme-toggle__icon--sun {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+}
+
+[data-theme="dark"] .theme-toggle__icon--moon {
+    opacity: 0;
+    transform: rotate(-45deg) scale(0.5);
+}

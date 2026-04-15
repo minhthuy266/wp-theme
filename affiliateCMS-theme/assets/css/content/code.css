@@ -1,0 +1,63 @@
+/*
+ * Post Content - Code
+ * Inline code and code blocks
+ *
+ * Dependencies: _base.css, tokens.css
+ */
+
+/* ========================================
+ * INLINE CODE
+ * ======================================== */
+
+.post-content code:not([class*="language-"]):not(pre code) {
+    display: inline;
+    padding: 0.2em 0.4em;
+    font-family: var(--font-mono);
+    font-size: 0.875em;
+    color: var(--color-accent);
+    background-color: var(--color-bg-alt);
+    border: 1px solid var(--content-border);
+    border-radius: var(--radius-sm);
+}
+
+/* ========================================
+ * CODE BLOCK
+ * ======================================== */
+
+.post-content pre {
+    margin: var(--content-element-spacing) 0;
+    padding: var(--space-5);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    line-height: 1.6;
+    color: var(--content-text);
+    background-color: var(--color-bg-alt);
+    border: 1px solid var(--content-border);
+    border-radius: var(--radius-lg);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.post-content pre code {
+    display: block;
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+}
+
+/* ========================================
+ * DARK MODE
+ * ======================================== */
+
+[data-theme="dark"] .post-content code:not([class*="language-"]):not(pre code) {
+    background-color: var(--color-bg-alt);
+    border-color: var(--color-border);
+}
+
+[data-theme="dark"] .post-content pre {
+    background-color: var(--color-bg-alt);
+    border-color: var(--color-border);
+}

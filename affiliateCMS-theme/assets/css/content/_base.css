@@ -1,0 +1,86 @@
+/*
+ * Post Content - Base Variables & Shared Styles
+ * Import this file first in all component CSS files
+ */
+
+/* ========================================
+ * POST CONTENT CONTAINER
+ * ======================================== */
+
+.post-content {
+    --content-width: 900px;
+    --content-wide-width: 1000px;
+    --content-full-width: 100%;
+
+    /* Typography scales */
+    --content-line-height: 1.75;
+    --content-paragraph-spacing: var(--space-6);
+
+    /* Element spacing */
+    --content-element-spacing: var(--space-8);
+    --content-section-spacing: var(--space-12);
+
+    /* Colors - can be overridden */
+    --content-text: var(--color-text);
+    --content-text-secondary: var(--color-text-secondary);
+    --content-text-muted: var(--color-text-muted);
+    --content-link: var(--color-primary);
+    --content-link-hover: var(--color-primary-hover);
+    --content-border: var(--color-border);
+    --content-bg-subtle: var(--color-bg-alt);
+
+    /* Base styles */
+    max-width: var(--content-width);
+    margin: 0 auto;
+    font-size: var(--text-base);
+    line-height: var(--content-line-height);
+    color: var(--content-text);
+}
+
+/* Wide content (for tables, images, etc.) */
+.post-content--wide {
+    max-width: var(--content-wide-width);
+}
+
+/* Full width content */
+.post-content--full {
+    max-width: var(--content-full-width);
+}
+
+/* Clearfix for floated elements */
+.post-content::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+/* ========================================
+ * RESPONSIVE ADJUSTMENTS
+ * ======================================== */
+
+@media (min-width: 768px) {
+    .post-content {
+        font-size: var(--text-lg);
+        padding-bottom: var(--space-6);
+    }
+}
+
+@media (max-width: 767px) {
+    .post-article {
+        padding-bottom: var(--space-6);
+    }
+}
+
+/* ========================================
+ * DARK MODE BASE
+ * ======================================== */
+
+[data-theme="dark"] .post-content {
+    --content-text: var(--color-text);
+    --content-text-secondary: var(--color-text-secondary);
+    --content-text-muted: var(--color-text-muted);
+    --content-link: var(--color-primary);
+    --content-link-hover: var(--color-primary-hover);
+    --content-border: var(--color-border);
+    --content-bg-subtle: var(--color-bg-alt);
+}

@@ -1,0 +1,195 @@
+/*
+ * Breadcrumb Component
+ * Shared breadcrumb styles used across pages
+ *
+ * Usage: Add .breadcrumb class to container, apply modifier for alignment
+ * Modifiers: .breadcrumb--centered, .breadcrumb--hide-current
+ */
+
+/* ========================================
+ * BASE BREADCRUMB
+ * ======================================== */
+
+.breadcrumb {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+}
+
+/* Centered variant */
+.breadcrumb--centered {
+    text-align: center;
+}
+
+.breadcrumb--centered .breadcrumb__list {
+    justify-content: center;
+}
+
+/* ========================================
+ * BREADCRUMB LIST
+ * ======================================== */
+
+.breadcrumb__list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-1);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center !important;
+}
+
+.breadcrumb__item {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+/* ========================================
+ * BREADCRUMB LINKS
+ * ======================================== */
+
+.breadcrumb__link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1-5);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color var(--duration-200) var(--ease-out);
+}
+
+.breadcrumb__link:hover {
+    color: var(--color-primary);
+}
+
+/* ========================================
+ * BREADCRUMB ICONS
+ * ======================================== */
+
+/* Home icon */
+.breadcrumb__link i.bi-house-fill {
+    font-size: var(--text-sm);
+    line-height: 1;
+}
+
+/* Separator */
+.breadcrumb__separator {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 var(--space-2);
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    line-height: 1;
+}
+
+.breadcrumb__separator i {
+    font-size: 10px;
+    line-height: 1;
+}
+
+/* ========================================
+ * CURRENT ITEM
+ * ======================================== */
+
+.breadcrumb__current {
+    font-weight: var(--font-medium);
+    color: var(--color-text);
+}
+
+/* Hide current item on single posts (avoid duplicate with title) */
+.post-hero .breadcrumb__item:last-child .breadcrumb__current {
+    display: none;
+}
+
+/* Also hide the last separator when current is hidden (only when last item has .breadcrumb__current) */
+.post-hero .breadcrumb__list:has(> .breadcrumb__item:last-child .breadcrumb__current) > .breadcrumb__item:nth-last-child(2) .breadcrumb__separator {
+    display: none;
+}
+
+/* ========================================
+ * LIGHT TEXT VARIANT (for dark backgrounds)
+ * ======================================== */
+
+.breadcrumb--light .breadcrumb__link {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.breadcrumb--light .breadcrumb__link:hover {
+    color: white;
+}
+
+.breadcrumb--light .breadcrumb__separator {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.breadcrumb--light .breadcrumb__current {
+    color: white;
+}
+
+/* ========================================
+ * DARK MODE
+ * ======================================== */
+
+[data-theme="dark"] .breadcrumb__link {
+    color: var(--color-text-secondary);
+}
+
+[data-theme="dark"] .breadcrumb__link:hover {
+    color: var(--color-primary);
+}
+
+/* ========================================
+ * RANKMATH BREADCRUMB INTEGRATION
+ * ======================================== */
+
+.breadcrumb--rankmath {
+    font-size: var(--text-sm);
+}
+
+.breadcrumb--rankmath .rank-math-breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Centered variant for RankMath - all devices */
+.breadcrumb--centered.breadcrumb--rankmath {
+    text-align: center;
+    justify-content: center;
+}
+
+.breadcrumb--centered.breadcrumb--rankmath .rank-math-breadcrumb {
+    justify-content: center;
+}
+
+.breadcrumb--centered.breadcrumb--rankmath .rank-math-breadcrumb p {
+    justify-content: center;
+}
+
+.breadcrumb--rankmath .rank-math-breadcrumb p {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+.breadcrumb--rankmath .rank-math-breadcrumb a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color var(--duration-200) var(--ease-out);
+}
+
+.breadcrumb--rankmath .rank-math-breadcrumb a:hover {
+    color: var(--color-primary);
+}
+
+/* Separator spacing */
+.breadcrumb--rankmath .rank-math-breadcrumb .separator {
+    padding: 0 var(--space-1);
+}
+
+/* Hide last item (current page title) in post hero */
+.post-hero .breadcrumb--rankmath .rank-math-breadcrumb .last {
+    display: none;
+}

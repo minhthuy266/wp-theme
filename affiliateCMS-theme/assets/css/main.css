@@ -1,0 +1,166 @@
+/*
+ * Main CSS Entry Point - AffiliateCMS
+ * Modern 2025-2026 Design System
+ *
+ * Structure:
+ * 1. Core - Tokens, Reset, Typography, Utilities
+ * 2. Layout - Grid, Topbar, Header, Navigation
+ * 3. Components - Buttons, Search Modal
+ * 4. Sections - Hero, Categories
+ * 5. Content - (future: articles, reviews, cards)
+ * 6. Widgets - (future: sidebar widgets)
+ * 7. Pages - (future: page-specific styles)
+ */
+
+/* ========================================
+ * 1. CORE
+ * ======================================== */
+
+/* Design tokens - CSS variables */
+@import 'core/tokens.css';
+
+/* CSS reset and base styles */
+@import 'core/reset.css';
+
+/* Typography - headings, text styles */
+@import 'core/typography.css';
+
+/* Utility classes */
+@import 'core/utilities.css';
+
+/* ========================================
+ * 2. LAYOUT
+ * ======================================== */
+
+/* Grid system and containers */
+@import 'layout/grid.css';
+
+/* Header - logo, search trigger, actions */
+@import 'layout/header.css';
+
+/* Navigation - desktop mega menu */
+@import 'layout/nav-desktop.css';
+
+/* Navigation - mobile sidebar */
+@import 'layout/nav-mobile.css';
+
+/* Sidebar layout - main + sidebar grid */
+@import 'layout/sidebar.css';
+
+/* ========================================
+ * 3. COMPONENTS
+ * ======================================== */
+
+/* Buttons - all button variants */
+@import 'components/buttons.css';
+
+/* Search Modal - AI-powered search */
+@import 'components/search-modal.css';
+
+/* Post Cards - grid layouts, card variants */
+@import 'components/post-cards.css';
+
+/* Breadcrumb - shared navigation */
+@import 'components/breadcrumb.css';
+
+/* Social Links - icon buttons */
+@import 'components/social-links.css';
+
+/* Icon Badge - gradient icon containers */
+@import 'components/icon-badge.css';
+
+/* Verified Badge - status indicators */
+@import 'components/verified-badge.css';
+
+/* Load More - pagination button */
+@import 'components/load-more.css';
+
+/* Pagination - page numbers navigation */
+@import 'components/pagination.css';
+
+/* ========================================
+ * 4. SECTIONS
+ * ======================================== */
+
+/* Featured posts section - news-style grid */
+@import 'sections/featured-posts.css';
+
+/* Footer section - minimal stacked */
+@import 'sections/footer.css';
+
+/* Category content - Cat 1 sections with tabs */
+@import 'sections/category-content.css';
+
+/* Related content - Slider, grid, minimal cards */
+@import 'sections/related-content.css';
+
+/* ========================================
+ * 5. CONTENT
+ * ======================================== */
+
+/* Post Content - Article body styles */
+@import 'content/_base.css';
+@import 'content/typography.css';
+@import 'content/headings.css';
+@import 'content/figures.css';
+@import 'content/blockquotes.css';
+@import 'content/tables.css';
+@import 'content/callouts.css';
+@import 'content/embeds.css';
+@import 'content/code.css';
+
+/* Post/Article cards */
+/* @import 'content/post-card.css'; */ /* ⚠️ Moved to _drafts/css/draft.css for review */
+
+/* @import 'content/article.css'; */
+/* @import 'content/review-card.css'; */
+/* @import 'content/product-card.css'; */
+/* @import 'content/comparison-table.css'; */
+/* @import 'content/pros-cons.css'; */
+/* @import 'content/rating.css'; */
+/* @import 'content/author-box.css'; */
+/* @import 'content/comments.css'; */
+/* @import 'content/pagination.css'; */
+
+/* ========================================
+ * 6. WIDGETS (Future)
+ * ======================================== */
+
+/* @import 'widgets/sidebar.css'; */
+/* @import 'widgets/popular-posts.css'; */
+/* @import 'widgets/newsletter.css'; */
+/* @import 'widgets/social-links.css'; */
+/* @import 'widgets/toc.css'; */
+
+/* ========================================
+ * 7. PAGES
+ * ======================================== */
+
+/* 404 Error page */
+@import 'pages/404.css';
+
+/* Category page */
+@import 'pages/category.css';
+
+/* Tag page */
+@import 'pages/tag.css';
+
+/* Author page */
+@import 'pages/author.css';
+
+/* Contact page */
+@import 'pages/contact.css';
+
+/* Post/Single page */
+@import 'pages/post.css';
+
+/* Default Page template */
+@import 'pages/page.css';
+
+/* Search results page */
+@import 'pages/search.css';
+
+/* Categories Directory page */
+@import 'pages/categories-directory.css';
+
+/* @import 'pages/home.css'; */

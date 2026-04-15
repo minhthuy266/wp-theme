@@ -1,0 +1,221 @@
+/* ========================================
+ * PAGE TEMPLATE STYLES
+ * Default WordPress Page - Centered 800px layout
+ * ======================================== */
+
+/* ----------------------------------------
+ * PAGE MAIN WRAPPER
+ * ---------------------------------------- */
+.site-main--page {
+    position: relative;
+    padding-bottom: var(--space-16);
+}
+
+/* Full Width Template - No constraints */
+.site-main--fullwidth {
+    width: 100%;
+}
+
+.site-main--fullwidth > *:first-child {
+    margin-top: 0;
+}
+
+.site-main--fullwidth > *:last-child {
+    margin-bottom: 0;
+}
+
+/* ----------------------------------------
+ * PAGE HEADER
+ * ---------------------------------------- */
+.page-header {
+    position: relative;
+    padding: var(--space-12) 0 var(--space-8);
+    overflow: visible;
+}
+
+/* Background layers - similar to post-hero */
+.page-header__background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    bottom: -100px;
+    mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
+}
+
+.page-header__gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(20, 184, 166, 0.15) 0%,
+        rgba(20, 184, 166, 0.08) 25%,
+        transparent 50%,
+        rgba(244, 165, 138, 0.1) 75%,
+        rgba(244, 165, 138, 0.18) 100%
+    );
+}
+
+[data-theme="dark"] .page-header__gradient {
+    background: linear-gradient(
+        135deg,
+        rgba(20, 184, 166, 0.1) 0%,
+        rgba(20, 184, 166, 0.05) 25%,
+        transparent 50%,
+        rgba(244, 165, 138, 0.08) 75%,
+        rgba(244, 165, 138, 0.12) 100%
+    );
+}
+
+.page-header__pattern {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, var(--color-border) 1px, transparent 0);
+    background-size: 32px 32px;
+    opacity: 0.3;
+}
+
+[data-theme="dark"] .page-header__pattern {
+    opacity: 0.1;
+}
+
+/* Content wrapper - centered 800px */
+.page-header__content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* ----------------------------------------
+ * PAGE TITLE
+ * ---------------------------------------- */
+.page-header__title {
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+    line-height: var(--leading-tight);
+    color: var(--color-text);
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    .page-header__title {
+        font-size: var(--text-4xl);
+    }
+}
+
+@media (min-width: 1024px) {
+    .page-header__title {
+        font-size: var(--text-5xl);
+    }
+}
+
+/* ----------------------------------------
+ * PAGE ARTICLE CONTENT
+ * ---------------------------------------- */
+.page-article {
+    padding: var(--space-8) 0;
+}
+
+/* Page content wrapper - centered 800px */
+.page-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Inherit all post-content styles for typography */
+.page-content p,
+.page-content ul,
+.page-content ol,
+.page-content blockquote,
+.page-content table,
+.page-content figure,
+.page-content pre {
+    margin-bottom: var(--space-5);
+}
+
+.page-content p {
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+    color: var(--color-text-secondary);
+}
+
+.page-content h2,
+.page-content h3,
+.page-content h4 {
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-4);
+    color: var(--color-text);
+}
+
+.page-content h2 {
+    font-size: var(--text-2xl);
+}
+
+.page-content h3 {
+    font-size: var(--text-xl);
+}
+
+.page-content h4 {
+    font-size: var(--text-lg);
+}
+
+.page-content a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--duration-200) var(--ease-out);
+}
+
+.page-content a:hover {
+    color: var(--color-primary-hover);
+    text-decoration: underline;
+}
+
+.page-content ul,
+.page-content ol {
+    padding-left: var(--space-6);
+}
+
+.page-content li {
+    margin-bottom: var(--space-2);
+    line-height: var(--leading-relaxed);
+    color: var(--color-text-secondary);
+}
+
+.page-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+}
+
+/* ----------------------------------------
+ * PAGE COMMENTS SECTION
+ * ---------------------------------------- */
+.page-comments {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: var(--space-8);
+    border-top: 1px solid var(--color-border-subtle);
+}
+
+/* ----------------------------------------
+ * RESPONSIVE ADJUSTMENTS
+ * ---------------------------------------- */
+@media (max-width: 767px) {
+    .site-main--page {
+        padding-bottom: var(--space-10);
+    }
+
+    .page-header {
+        padding: var(--space-8) 0 var(--space-6);
+    }
+
+    .page-article {
+        padding: var(--space-6) 0;
+    }
+
+    .page-content {
+        padding: 0 var(--space-1);
+    }
+}

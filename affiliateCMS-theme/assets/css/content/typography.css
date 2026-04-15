@@ -1,0 +1,318 @@
+/*
+ * Post Content - Typography
+ * Base styles for paragraphs, lists, links, and inline elements
+ *
+ * Dependencies: _base.css, tokens.css
+ */
+
+/* ========================================
+ * PARAGRAPHS
+ * ======================================== */
+
+.post-content p {
+    margin: 0 0 var(--content-paragraph-spacing);
+    color: var(--content-text);
+}
+
+.post-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Lead paragraph - larger intro text */
+.post-content__lead,
+.post-content p.lead {
+    font-size: var(--text-xl);
+    line-height: 1.6;
+    color: var(--content-text-secondary);
+    margin-bottom: var(--content-element-spacing);
+}
+
+@media (min-width: 768px) {
+    .post-content__lead,
+    .post-content p.lead {
+        font-size: var(--text-2xl);
+    }
+}
+
+/* Small text */
+.post-content small,
+.post-content .text-small {
+    font-size: var(--text-sm);
+    color: var(--content-text-muted);
+}
+
+/* ========================================
+ * LINKS
+ * ======================================== */
+
+/* Internal links */
+.post-content a:not([class]):not([target="_blank"]) {
+    color: var(--content-link);
+    text-decoration: underline;
+    text-decoration-color: rgba(var(--color-primary-rgb), 0.3);
+    text-underline-offset: 3px;
+    transition: all var(--duration-200) var(--ease-out);
+}
+
+.post-content a:not([class]):not([target="_blank"]):hover {
+    color: var(--content-link-hover);
+    text-decoration-color: var(--content-link-hover);
+}
+
+/* External links */
+.post-content a[target="_blank"]:not([class]) {
+    color: var(--content-link);
+    text-decoration: underline;
+    text-decoration-color: rgba(var(--color-primary-rgb), 0.3);
+    text-underline-offset: 3px;
+    transition: all var(--duration-200) var(--ease-out);
+}
+
+.post-content a[target="_blank"]:not([class]):hover {
+    color: var(--content-link-hover);
+    text-decoration-color: var(--content-link-hover);
+}
+
+/* External link icon */
+.post-content a[target="_blank"]:not([class])::after {
+    content: '\F1C5'; /* Bootstrap icon: box-arrow-up-right */
+    font-family: 'bootstrap-icons';
+    display: inline-block;
+    margin-left: 4px;
+    font-size: 0.75em;
+    vertical-align: middle;
+    opacity: 0.7;
+}
+
+/* ========================================
+ * LISTS - UNORDERED
+ * ======================================== */
+
+.post-content ul:not([class]) {
+    margin: 0 0 var(--content-element-spacing);
+    padding-left: var(--space-6);
+    list-style: none;
+}
+
+.post-content ul:not([class]) li {
+    position: relative;
+    margin-bottom: var(--space-3);
+    padding-left: var(--space-1);
+}
+
+.post-content ul:not([class]) li::before {
+    content: '';
+    position: absolute;
+    left: calc(-1 * var(--space-4));
+    top: 1.15em;
+    width: 7px;
+    height: 7px;
+    background-color: var(--color-primary);
+    border-radius: var(--radius-full);
+}
+
+/* Nested lists */
+.post-content ul:not([class]) ul {
+    margin-top: var(--space-3);
+    margin-bottom: 0;
+}
+
+.post-content ul:not([class]) ul li::before {
+    width: 6px;
+    height: 6px;
+    background-color: transparent;
+    border: 2px solid var(--color-primary);
+}
+
+.post-content ul:not([class]) ul ul li::before {
+    width: 5px;
+    height: 5px;
+    background-color: var(--content-text-muted);
+    border: none;
+}
+
+/* ========================================
+ * LISTS - ORDERED
+ * ======================================== */
+
+.post-content ol:not([class]) {
+    margin: 0 0 var(--content-element-spacing);
+    padding-left: 0;
+    list-style: none;
+    counter-reset: list-counter;
+}
+
+.post-content ol:not([class]) li {
+    position: relative;
+    margin-bottom: var(--space-4);
+    padding-left: var(--space-10);
+    counter-increment: list-counter;
+}
+
+.post-content ol:not([class]) li::before {
+    content: counter(list-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--color-primary);
+    background-color: var(--color-primary-light);
+    border-radius: var(--radius-full);
+}
+
+/* Nested ordered lists */
+.post-content ol:not([class]) ol {
+    margin-top: var(--space-4);
+    margin-bottom: 0;
+    counter-reset: nested-counter;
+}
+
+.post-content ol:not([class]) ol li {
+    padding-left: var(--space-8);
+    counter-increment: nested-counter;
+}
+
+.post-content ol:not([class]) ol li::before {
+    content: counter(nested-counter, lower-alpha);
+    width: 24px;
+    height: 24px;
+    font-size: var(--text-xs);
+    background-color: var(--color-bg-alt);
+    color: var(--content-text-secondary);
+}
+
+/* ========================================
+ * DEFINITION LISTS
+ * ======================================== */
+
+.post-content dl {
+    margin: 0 0 var(--content-element-spacing);
+}
+
+.post-content dt {
+    font-weight: var(--font-semibold);
+    color: var(--content-text);
+    margin-bottom: var(--space-1);
+}
+
+.post-content dd {
+    margin-left: 0;
+    margin-bottom: var(--space-4);
+    padding-left: var(--space-4);
+    border-left: 2px solid var(--color-primary-light);
+    color: var(--content-text-secondary);
+}
+
+/* ========================================
+ * INLINE ELEMENTS
+ * ======================================== */
+
+/* Bold/Strong */
+.post-content strong,
+.post-content b {
+    font-weight: var(--font-semibold);
+    color: var(--content-text);
+}
+
+/* Italic/Emphasis */
+.post-content em,
+.post-content i:not([class]) {
+    font-style: italic;
+}
+
+/* Highlighted text */
+.post-content mark {
+    background-color: rgba(245, 158, 11, 0.2);
+    color: inherit;
+    padding: 0.1em 0.3em;
+    border-radius: var(--radius-sm);
+}
+
+/* Strikethrough */
+.post-content del,
+.post-content s {
+    text-decoration: line-through;
+    color: var(--content-text-muted);
+}
+
+/* Inserted text */
+.post-content ins {
+    text-decoration: none;
+    background-color: rgba(16, 185, 129, 0.15);
+    padding: 0.1em 0.3em;
+    border-radius: var(--radius-sm);
+}
+
+/* Abbreviation */
+.post-content abbr[title] {
+    text-decoration: underline dotted;
+    cursor: help;
+}
+
+/* Superscript & Subscript */
+.post-content sup,
+.post-content sub {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+.post-content sup {
+    top: -0.5em;
+}
+
+.post-content sub {
+    bottom: -0.25em;
+}
+
+/* Keyboard input */
+.post-content kbd {
+    display: inline-block;
+    padding: 0.15em 0.4em;
+    font-family: var(--font-mono);
+    font-size: 0.875em;
+    color: var(--content-text);
+    background-color: var(--color-bg-alt);
+    border: 1px solid var(--content-border);
+    border-radius: var(--radius-sm);
+    box-shadow: 0 2px 0 var(--content-border);
+}
+
+/* ========================================
+ * HORIZONTAL RULE
+ * ======================================== */
+
+.post-content hr {
+    border: none;
+    height: 1px;
+    background-color: var(--content-border);
+    margin: var(--content-section-spacing) 0;
+}
+
+/* ========================================
+ * SELECTIONS
+ * ======================================== */
+
+.post-content ::selection {
+    background-color: rgba(var(--color-primary-rgb), 0.2);
+    color: var(--content-text);
+}
+
+/* ========================================
+ * DARK MODE
+ * ======================================== */
+
+[data-theme="dark"] .post-content mark {
+    background-color: rgba(245, 158, 11, 0.3);
+}
+
+[data-theme="dark"] .post-content ins {
+    background-color: rgba(16, 185, 129, 0.2);
+}

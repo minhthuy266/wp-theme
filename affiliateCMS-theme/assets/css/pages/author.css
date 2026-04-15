@@ -1,0 +1,250 @@
+/* ========================================
+ * AUTHOR PAGE STYLES
+ * Author header - Style 6: Centered + Expertise
+ *
+ * Shared components used:
+ * - Social links: components/social-links.css
+ * - Verified badge: components/verified-badge.css
+ * ======================================== */
+
+/* ----------------------------------------
+ * Author Avatar
+ * ---------------------------------------- */
+.author-header__avatar {
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    border: 4px solid var(--color-surface);
+    box-shadow: var(--shadow-lg);
+}
+
+.author-header__avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-full);
+}
+
+/* Verified Badge */
+.author-header__verified {
+    color: var(--color-primary);
+    font-size: 0.7em;
+}
+
+/* Social links container */
+.author-header__social {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.author-header__social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    color: var(--color-text-muted);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-full);
+    text-decoration: none;
+    transition: all var(--duration-150) var(--ease-out);
+}
+
+.author-header__social-link:hover {
+    color: var(--color-primary);
+    background-color: var(--color-primary-light);
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+.author-header__social-link i {
+    font-size: 16px;
+}
+
+/* ----------------------------------------
+ * Style 6: Centered + Expertise
+ * Hero centered layout with expertise section
+ * ---------------------------------------- */
+.author-header--centered {
+    padding: var(--space-10) 0 var(--space-8);
+    background:
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(var(--color-primary-rgb), 0.08) 0%, transparent 70%),
+        linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 100%);
+    border-bottom: 1px solid var(--color-border-subtle);
+    text-align: center;
+}
+
+.author-header--centered .author-header__avatar {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto var(--space-4);
+    border-width: 4px;
+}
+
+@media (min-width: 768px) {
+    .author-header--centered .author-header__avatar {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+.author-header--centered .author-header__name {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    color: var(--color-text);
+    margin: 0 0 var(--space-1);
+    line-height: var(--leading-tight);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+}
+
+@media (min-width: 768px) {
+    .author-header--centered .author-header__name {
+        font-size: var(--text-3xl);
+    }
+}
+
+.author-header--centered .author-header__role {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin: 0 0 var(--space-4);
+}
+
+.author-header--centered .author-header__bio {
+    font-size: var(--text-base);
+    color: var(--color-text-secondary);
+    margin: 0 auto var(--space-5);
+    max-width: 550px;
+    line-height: var(--leading-relaxed);
+}
+
+/* Social links */
+.author-header--centered .author-header__social {
+    justify-content: center;
+    margin-bottom: var(--space-6);
+}
+
+/* ----------------------------------------
+ * Stats & Expertise Section
+ * ---------------------------------------- */
+.author-header--centered .author-header__details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-5);
+    padding-top: var(--space-5);
+    border-top: 1px solid var(--color-border-subtle);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+    .author-header--centered .author-header__details {
+        flex-direction: row;
+        justify-content: center;
+        gap: var(--space-8);
+    }
+}
+
+/* Stats row */
+.author-header--centered .author-header__stats {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-6);
+}
+
+.author-header--centered .author-header__stat {
+    text-align: center;
+}
+
+.author-header--centered .author-header__stat-number {
+    display: block;
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--color-text);
+    line-height: 1;
+}
+
+.author-header--centered .author-header__stat-label {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Expertise section */
+.author-header--centered .author-header__expertise-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+@media (min-width: 640px) {
+    .author-header--centered .author-header__expertise-section {
+        align-items: flex-start;
+        padding-left: var(--space-6);
+        border-left: 1px solid var(--color-border-subtle);
+    }
+}
+
+.author-header--centered .author-header__expertise-label {
+    font-size: var(--text-xs);
+    font-weight: var(--font-medium);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.author-header--centered .author-header__expertise {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-2);
+}
+
+@media (min-width: 640px) {
+    .author-header--centered .author-header__expertise {
+        justify-content: flex-start;
+    }
+}
+
+.author-header--centered .author-header__expertise-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-1) var(--space-2-5);
+    font-size: var(--text-xs);
+    font-weight: var(--font-medium);
+    color: var(--color-text-secondary);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-full);
+}
+
+.author-header--centered .author-header__expertise-tag i {
+    color: var(--color-primary);
+    font-size: 11px;
+}
+
+/* ----------------------------------------
+ * Responsive Adjustments
+ * ---------------------------------------- */
+@media (max-width: 767px) {
+    .author-header--centered {
+        padding: var(--space-8) 0 var(--space-6);
+    }
+
+    .author-header--centered .author-header__stat-number {
+        font-size: var(--text-lg);
+    }
+}
+
+@media (max-width: 639px) {
+    .author-header--centered .author-header__stats {
+        gap: var(--space-4);
+    }
+}
